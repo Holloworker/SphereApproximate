@@ -74,6 +74,23 @@ set(LIBS_TO_LINK
     Surface
     Export
 )
+
+
+set(MANIFOLD_SOURCES
+    lib/ManifoldPlus/src/Intersection.cc
+    lib/ManifoldPlus/src/IO.cc
+    lib/ManifoldPlus/src/Manifold.cc
+    lib/ManifoldPlus/src/MeshProjector.cc
+    lib/ManifoldPlus/src/Octree.cc
+    lib/ManifoldPlus/src/Parser.cc
+)
+add_library(manifoldCore STATIC ${MANIFOLD_SOURCES})
+
+target_include_directories(manifoldCore PUBLIC
+    lib/ManifoldPlus/src  # 这里包括了所有头文件
+    lib/ManifoldPlus/3rd_party/eigen
+    lib/ManifoldPlus/3rd_party/libigl/include
+)
 target_link_libraries(STG PUBLIC ${LIBS_TO_LINK})
 
 
