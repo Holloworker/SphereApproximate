@@ -45,13 +45,13 @@ pip install trimesh
 
 ## Compile
 
-Before compiling, ensure the Python environment with trimesh is activated
 
 ```console
 cmake -B build . -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 For a debug build, add `-DCMAKE_BUILD_TYPE=Debug` and `-DENABLE_SANITIZER=ON` to the cmake step above.
+Before running, ensure the Python environment with trimesh is activated.
 
 ## Usage
 ### Main Program:
